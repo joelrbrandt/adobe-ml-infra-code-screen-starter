@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "d7a9c60a-3e64-40c5-b8a8-3a4c4c08d722",
+		"name": "Tic-Tac-Toe Game",
+		"description": "REST API for ML Infrastructure Engineer Code Screen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/health",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"health"
+					]
+				},
+				"description": "Get service health"
+			},
+			"response": []
+		},
+		{
+			"name": "create_game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/game",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"game"
+					]
+				},
+				"description": "Create a new game"
+			},
+			"response": []
+		},
+		{
+			"name": "get_game_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/game/:id",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"game",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "The game id"
+						}
+					]
+				},
+				"description": "Get the status of an existing game"
+			},
+			"response": []
+		},
+		{
+			"name": "get_game_board_position",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/game/:id/:board_position",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"game",
+						":id",
+						":board_position"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "The game id"
+						},
+						{
+							"key": "board_position",
+							"value": "",
+							"description": "The board position, zero indexed, numbered left to right, top to bottom (0-8)\n\n"
+						}
+					]
+				},
+				"description": "Get the value of a board position of an existing game"
+			},
+			"response": []
+		},
+		{
+			"name": "play_game",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}/game/:id/:board_position",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"game",
+						":id",
+						":board_position"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "The game id"
+						},
+						{
+							"key": "board_position",
+							"value": "",
+							"description": "The board position, zero indexed, numbered left to right, top to bottom (0-8)\n\n"
+						}
+					]
+				},
+				"description": "Take a turn as player X"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost"
+		},
+		{
+			"key": "port",
+			"value": "5000"
+		}
+	]
+}
